@@ -1,0 +1,44 @@
+.container {
+    height: 100px;
+    text-align: center;
+    float: right;
+}
+.title {
+    position: absolute;
+    left: 25%;
+    top: 200px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    height: 400px;
+    text-align: center;
+    background-color:rgb(34, 122, 180);
+
+}
+.instructions {
+    left: 25%;
+    top: 200px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+#start-button {
+    left: 25%;
+    top: 200px;
+    margin-top: 25px;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+}
+.blue-box {
+    position: absolute;
+    left: 25%;
+    top: 200px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    height: 400px;
+    text-align: center;
+    background-color:rgb(17, 5, 122);
+}
