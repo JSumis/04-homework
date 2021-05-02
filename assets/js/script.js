@@ -1,12 +1,14 @@
 // Selects element by class
 var timeEl = document.querySelector(".time");
 
-var startButton = document.getElementById("start-button")
+var startButton = document.getElementById("start-button");
+var answer = document.getElementById("answer");
+var score = 0;
 
 startButton.addEventListener("click", changeBlueBox)
 
 
-var secondsLeft = 120;
+var secondsLeft = 60;
 
 function setTime() {
   // Sets interval in variable
@@ -26,107 +28,146 @@ function setTime() {
 
 setTime();
 
+function wrongAnswer() {
+secondsLeft = secondsLeft - 10;
+answer.innerHTML = "<h1>WRONG!</h1>";
+}
+function correctAnswer() {
+  answer.innerHTML = "<h1>CORRECT!</h1>";
+  score++;
+}
+
 
 var theBlueBox = document.getElementById("blue-box")
 function changeBlueBox() {
   theBlueBox.innerHTML = "<h1>Question #1:</h1><h2 class = 'instructions'> Commonly used data types DO NOT INCLUDE:</h2>" 
   + "<button id='choiceOne'>A. strings</button>" 
-  + "<button id='choiceTwo' value = 'boolean'>B. booleans</button>" 
+  + "<button id='choiceTwo'>B. booleans</button>" 
   + "<button id='choiceThree'>C. alerts</button>" 
   + "<button id='choiceFour'>D. numbers</button>";
 
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click", questionTwo)
+choiceOne.addEventListener("click", wrongAnswer)
 
 var choiceTwo = document.getElementById("choiceTwo");
 choiceTwo.addEventListener("click", questionTwo)
+choiceTwo.addEventListener("click", wrongAnswer)
 
 var choiceThree = document.getElementById("choiceThree");
 choiceThree.addEventListener("click", questionTwo)
+choiceThree.addEventListener("click", correctAnswer)
 
 var choiceFour = document.getElementById("choiceFour");
 choiceFour.addEventListener("click", questionTwo)
+choiceFour.addEventListener("click", wrongAnswer)
 }
 
 function questionTwo() {
   theBlueBox.innerHTML = "<h1>Question #2</h1><h2 class = 'instructions'>The condition in an if / else statement is enclosed within:</h2>" 
   + "<button id='choiceOne'>A. quotes</button>" 
-  + "<button id='choiceTwo' value = 'boolean'>B. curly brackets</button>" 
+  + "<button id='choiceTwo'>B. curly brackets</button>" 
   + "<button id='choiceThree'>C. parentheses</button>" 
   + "<button id='choiceFour'>D. square brackets</button>";
 
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , questionThree)
+choiceOne.addEventListener("click", wrongAnswer)
 
 var choiceTwo = document.getElementById("choiceTwo");
 choiceTwo.addEventListener("click", questionThree)
+choiceTwo.addEventListener("click", wrongAnswer)
 
 var choiceThree = document.getElementById("choiceThree");
 choiceThree.addEventListener("click", questionThree)
+choiceThree.addEventListener("click", correctAnswer)
 
 var choiceFour = document.getElementById("choiceFour");
 choiceFour.addEventListener("click", questionThree)
+choiceFour.addEventListener("click", wrongAnswer)
 }
 
 function questionThree() {
   theBlueBox.innerHTML = "<h1>Question #3</h1><h2 class = 'instructions'>Arrays in javascript can be used to store:</h2>" 
   + "<button id='choiceOne'>A. numbers and strings</button>" 
-  + "<button id='choiceTwo' value = 'boolean'>B. other arrays</button>" 
+  + "<button id='choiceTwo'>B. other arrays</button>" 
   + "<button id='choiceThree'>C. booleans</button>" 
   + "<button id='choiceFour'>D. all of the above</button>";
 
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , questionFour)
+choiceOne.addEventListener("click", wrongAnswer)
 
 var choiceTwo = document.getElementById("choiceTwo");
 choiceTwo.addEventListener("click", questionFour)
+choiceTwo.addEventListener("click", wrongAnswer)
 
 var choiceThree = document.getElementById("choiceThree");
 choiceThree.addEventListener("click", questionFour)
+choiceThree.addEventListener("click", wrongAnswer)
 
 var choiceFour = document.getElementById("choiceFour");
 choiceFour.addEventListener("click", questionFour)
+choiceFour.addEventListener("click", correctAnswer)
 }
 
 function questionFour() {
   theBlueBox.innerHTML = "<h1>Question #4</h1><h2 class = 'instructions'>String values must be enclosed within _____ when being assigned to variables.</h2>" 
   + "<button id='choiceOne'>A. commas</button>" 
-  + "<button id='choiceTwo' value = 'boolean'>B. curly brackets</button>" 
+  + "<button id='choiceTwo'>B. curly brackets</button>" 
   + "<button id='choiceThree'>C. quotes</button>" 
   + "<button id='choiceFour'>D. parentheses</button>";
 
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , questionFive)
+choiceOne.addEventListener("click", wrongAnswer)
 
 var choiceTwo = document.getElementById("choiceTwo");
 choiceTwo.addEventListener("click", questionFive)
+choiceTwo.addEventListener("click", wrongAnswer)
 
 var choiceThree = document.getElementById("choiceThree");
 choiceThree.addEventListener("click", questionFive)
+choiceThree.addEventListener("click", correctAnswer)
 
 var choiceFour = document.getElementById("choiceFour");
 choiceFour.addEventListener("click", questionFive)
+choiceFour.addEventListener("click", wrongAnswer)
 }
 
 function questionFive() {
   theBlueBox.innerHTML = "<h1>Question #5</h1><h2 class = 'instructions'>A very useful tool used during development and debugging for printing content to the debugger is:</h2>" 
   + "<button id='choiceOne'>A. javascript</button>" 
-  + "<button id='choiceTwo' value = 'boolean'>B. terminal / bash</button>" 
+  + "<button id='choiceTwo'>B. terminal / bash</button>" 
   + "<button id='choiceThree'>C. for loops</button>" 
   + "<button id='choiceFour'>D. console log</button>";
 
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , highScore)
+choiceOne.addEventListener("click", wrongAnswer)
 
 var choiceTwo = document.getElementById("choiceTwo");
 choiceTwo.addEventListener("click", highScore)
+choiceTwo.addEventListener("click", wrongAnswer)
 
 var choiceThree = document.getElementById("choiceThree");
 choiceThree.addEventListener("click", highScore)
+choiceThree.addEventListener("click", wrongAnswer)
 
 var choiceFour = document.getElementById("choiceFour");
 choiceFour.addEventListener("click", highScore)
+choiceFour.addEventListener("click", correctAnswer)
 }
+
+function highScore() {
+  theBlueBox.innerHTML = "<h1>All Done!</h1><h2 class = 'instructions'>Your final score is: "+ score + "</h2>";
+}
+
+
+
+
+
+
 
 // write a function display question 2 (like bluebox) hard coded question 1 to the next
 // stored in value like line 32
