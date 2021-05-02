@@ -34,8 +34,18 @@ function changeBlueBox() {
   + "<button id='choiceTwo' value = 'boolean'>B. booleans</button>" 
   + "<button id='choiceThree'>C. alerts</button>" 
   + "<button id='choiceFour'>D. numbers</button>";
+
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click", questionTwo)
+
+var choiceTwo = document.getElementById("choiceTwo");
+choiceTwo.addEventListener("click", questionTwo)
+
+var choiceThree = document.getElementById("choiceThree");
+choiceThree.addEventListener("click", questionTwo)
+
+var choiceFour = document.getElementById("choiceFour");
+choiceFour.addEventListener("click", questionTwo)
 }
 
 function questionTwo() {
@@ -44,8 +54,18 @@ function questionTwo() {
   + "<button id='choiceTwo' value = 'boolean'>B. curly brackets</button>" 
   + "<button id='choiceThree'>C. parentheses</button>" 
   + "<button id='choiceFour'>D. square brackets</button>";
+
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , questionThree)
+
+var choiceTwo = document.getElementById("choiceTwo");
+choiceTwo.addEventListener("click", questionThree)
+
+var choiceThree = document.getElementById("choiceThree");
+choiceThree.addEventListener("click", questionThree)
+
+var choiceFour = document.getElementById("choiceFour");
+choiceFour.addEventListener("click", questionThree)
 }
 
 function questionThree() {
@@ -54,8 +74,18 @@ function questionThree() {
   + "<button id='choiceTwo' value = 'boolean'>B. other arrays</button>" 
   + "<button id='choiceThree'>C. booleans</button>" 
   + "<button id='choiceFour'>D. all of the above</button>";
+
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , questionFour)
+
+var choiceTwo = document.getElementById("choiceTwo");
+choiceTwo.addEventListener("click", questionFour)
+
+var choiceThree = document.getElementById("choiceThree");
+choiceThree.addEventListener("click", questionFour)
+
+var choiceFour = document.getElementById("choiceFour");
+choiceFour.addEventListener("click", questionFour)
 }
 
 function questionFour() {
@@ -64,8 +94,18 @@ function questionFour() {
   + "<button id='choiceTwo' value = 'boolean'>B. curly brackets</button>" 
   + "<button id='choiceThree'>C. quotes</button>" 
   + "<button id='choiceFour'>D. parentheses</button>";
+
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , questionFive)
+
+var choiceTwo = document.getElementById("choiceTwo");
+choiceTwo.addEventListener("click", questionFive)
+
+var choiceThree = document.getElementById("choiceThree");
+choiceThree.addEventListener("click", questionFive)
+
+var choiceFour = document.getElementById("choiceFour");
+choiceFour.addEventListener("click", questionFive)
 }
 
 function questionFive() {
@@ -74,8 +114,18 @@ function questionFive() {
   + "<button id='choiceTwo' value = 'boolean'>B. terminal / bash</button>" 
   + "<button id='choiceThree'>C. for loops</button>" 
   + "<button id='choiceFour'>D. console log</button>";
+
 var choiceOne = document.getElementById("choiceOne");
 choiceOne.addEventListener("click" , highScore)
+
+var choiceTwo = document.getElementById("choiceTwo");
+choiceTwo.addEventListener("click", highScore)
+
+var choiceThree = document.getElementById("choiceThree");
+choiceThree.addEventListener("click", highScore)
+
+var choiceFour = document.getElementById("choiceFour");
+choiceFour.addEventListener("click", highScore)
 }
 
 // write a function display question 2 (like bluebox) hard coded question 1 to the next
