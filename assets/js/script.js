@@ -1,10 +1,11 @@
 // Selects element by class
 var timeEl = document.querySelector(".time");
 
-// Selects element by id
-var mainEl = document.getElementById("main");
 var startButton = document.getElementById("start-button")
+
 startButton.addEventListener("click", changeBlueBox)
+
+
 var secondsLeft = 120;
 
 function setTime() {
@@ -28,12 +29,57 @@ setTime();
 
 var theBlueBox = document.getElementById("blue-box")
 function changeBlueBox() {
-  theBlueBox.innerHTML = "<h1>Coding Quiz Challenge </h1><h2 class = 'instructions'>I got changed.</h2><button id='start-button'>Start</button>";
+  theBlueBox.innerHTML = "<h1>Question #1:</h1><h2 class = 'instructions'> Commonly used data types DO NOT INCLUDE:</h2>" 
+  + "<button id='choiceOne'>A. strings</button>" 
+  + "<button id='choiceTwo' value = 'boolean'>B. booleans</button>" 
+  + "<button id='choiceThree'>C. alerts</button>" 
+  + "<button id='choiceFour'>D. numbers</button>";
+var choiceOne = document.getElementById("choiceOne");
+choiceOne.addEventListener("click", questionTwo)
 }
 
+function questionTwo() {
+  theBlueBox.innerHTML = "<h1>Question #2</h1><h2 class = 'instructions'>The condition in an if / else statement is enclosed within:</h2>" 
+  + "<button id='choiceOne'>A. quotes</button>" 
+  + "<button id='choiceTwo' value = 'boolean'>B. curly brackets</button>" 
+  + "<button id='choiceThree'>C. parentheses</button>" 
+  + "<button id='choiceFour'>D. square brackets</button>";
+var choiceOne = document.getElementById("choiceOne");
+choiceOne.addEventListener("click" , questionThree)
+}
 
+function questionThree() {
+  theBlueBox.innerHTML = "<h1>Question #3</h1><h2 class = 'instructions'>Arrays in javascript can be used to store:</h2>" 
+  + "<button id='choiceOne'>A. numbers and strings</button>" 
+  + "<button id='choiceTwo' value = 'boolean'>B. other arrays</button>" 
+  + "<button id='choiceThree'>C. booleans</button>" 
+  + "<button id='choiceFour'>D. all of the above</button>";
+var choiceOne = document.getElementById("choiceOne");
+choiceOne.addEventListener("click" , questionFour)
+}
 
+function questionFour() {
+  theBlueBox.innerHTML = "<h1>Question #4</h1><h2 class = 'instructions'>String values must be enclosed within _____ when being assigned to variables.</h2>" 
+  + "<button id='choiceOne'>A. commas</button>" 
+  + "<button id='choiceTwo' value = 'boolean'>B. curly brackets</button>" 
+  + "<button id='choiceThree'>C. quotes</button>" 
+  + "<button id='choiceFour'>D. parentheses</button>";
+var choiceOne = document.getElementById("choiceOne");
+choiceOne.addEventListener("click" , questionFive)
+}
 
+function questionFive() {
+  theBlueBox.innerHTML = "<h1>Question #5</h1><h2 class = 'instructions'>A very useful tool used during development and debugging for printing content to the debugger is:</h2>" 
+  + "<button id='choiceOne'>A. javascript</button>" 
+  + "<button id='choiceTwo' value = 'boolean'>B. terminal / bash</button>" 
+  + "<button id='choiceThree'>C. for loops</button>" 
+  + "<button id='choiceFour'>D. console log</button>";
+var choiceOne = document.getElementById("choiceOne");
+choiceOne.addEventListener("click" , highScore)
+}
+
+// write a function display question 2 (like bluebox) hard coded question 1 to the next
+// stored in value like line 32
 
 
 
@@ -42,7 +88,6 @@ function changeBlueBox() {
 
 /* Time for some psuedo-code
 similar game in (04-28 letter game with timer)
-style like 04-28 change colors
 
 need to integrate timer in upper right corner (04-09 and 04-10)
 
