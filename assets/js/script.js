@@ -6,7 +6,7 @@ var answer = document.getElementById("answer");
 var score = 0;
 
 startButton.addEventListener("click", changeBlueBox)
-
+startButton.addEventListener("click", setTime)
 
 var secondsLeft = 60;
 
@@ -14,22 +14,28 @@ function setTime() {
   // Sets interval in variable
   var timerInterval = setInterval(function() {
     secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds ";
-
-    if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
+      timeEl.textContent = secondsLeft + " seconds ";
       // Stops execution of action at set interval
+      secondsLeft = 0;
       clearInterval(timerInterval);
+      
       // Calls function to create and append image
-      sendMessage();
+      gameOver();
     }
+    timeEl.textContent = secondsLeft + " seconds ";
 
   }, 1000);
 }
 
-setTime();
+
 
 function wrongAnswer() {
 secondsLeft = secondsLeft - 10;
+if (secondsLeft <= 0) {
+  secondsLeft = 0;
+  gameOver();
+}
 answer.innerHTML = "<h1>WRONG!</h1>";
 }
 function correctAnswer() {
@@ -155,13 +161,23 @@ choiceThree.addEventListener("click", highScore)
 choiceThree.addEventListener("click", wrongAnswer)
 
 var choiceFour = document.getElementById("choiceFour");
-choiceFour.addEventListener("click", highScore)
-choiceFour.addEventListener("click", correctAnswer)
+choiceFour.addEventListener("click", correctFinalAnswer)
+}
+
+function correctFinalAnswer() {
+  answer.innerHTML = "<h1>CORRECT!</h1>";
+  score++;
+  highScore();
 }
 
 function highScore() {
   theBlueBox.innerHTML = "<h1>All Done!</h1><h2 class = 'instructions'>Your final score is: "+ score + "</h2>";
 }
+
+function gameOver() {
+  theBlueBox.innerHTML = "<h1>GAME OVER!</h1><h2 class = 'instructions'>Sorry, you ran out of time! Your final score is: "+ score + "</h2>";
+}
+
 
 
 
