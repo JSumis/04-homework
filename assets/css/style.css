@@ -1,57 +1,70 @@
 .container {
-    height: 100px;
-    text-align: center;
-    float: right;
+  height: 100px;
+  text-align: center;
+  float: right;
 }
 .title {
-    position: absolute;
-    left: 25%;
-    top: 200px;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    height: 400px;
-    text-align: center;
-    background-color:rgb(34, 122, 180);
-
+  position: absolute;
+  left: 25%;
+  top: 200px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 400px;
+  text-align: center;
+  background-color: rgb(34, 122, 180);
 }
 .instructions {
-    left: 25%;
-    top: 200px;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    text-align: center;
+  left: 25%;
+  top: 200px;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
 }
 #start-button {
-    left: 25%;
-    top: 200px;
-    margin-top: 25px;
-    width: 150px;
-    padding: 10px;
-    text-align: center;
+  left: 25%;
+  top: 100px;
+  margin-top: 20px;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
 }
 .blue-box {
-    position: absolute;
-    left: 25%;
-    top: 200px;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    height: 400px;
-    text-align: center;
-    background-color:rgb(17, 5, 122);
+  position: absolute;
+  left: 25%;
+  top: 200px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 400px;
+  text-align: center;
+  background-color: rgb(17, 5, 122);
 }
 .answer-box {
-    position: absolute;
-    left: 25%;
-    top: 600px;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    height: 100px;
-    text-align: center;
-    background-color:rgb(208, 206, 223);
-
-
+  position: absolute;
+  left: 25%;
+  top: 600px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 100px;
+  text-align: center;
+  background-color: rgb(208, 206, 223);
 }
+
+@media screen and (max-width: 992px) {
+    .blue-box {
+      width: 60%;
+      display: inline-block;
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .answer-box {
+      width: 60%;
+      display: inline-block;
+      font-size: 20px;
+    }
+  }
